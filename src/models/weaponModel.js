@@ -1,10 +1,10 @@
 const pool = require("../config/database");
 
 // Função para buscar as armas com filtros opcionais
-const getWeapon = async (name) => {
+const getWeapons = async (name) => {
     let query = "SELECT weapons.* FROM weapons";
     let params = [];
-    let conditions = []; // Define a variável conditions como um array vazio
+    let conditions = []; 
 
     // Adiciona condições de busca se o nome forem fornecidos
     if (name) {
@@ -64,7 +64,7 @@ const deleteWeapon = async (id) => {
 };
 
 module.exports = {
-    getWeapon,
+    getWeapons,
     getWeaponById,
     createWeapon,
     updateWeapon,

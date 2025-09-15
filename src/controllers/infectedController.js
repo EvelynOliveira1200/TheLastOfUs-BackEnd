@@ -5,7 +5,7 @@ const getInfected = async (req, res) => {
     try {
         const { name } = req.query;
         const infected = await infectedModel.getInfected(name);
-        res.status(200).json({ message: "Infected retrieved successfully.", infected });
+        res.status(200).json(infected);
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: "Error retrieving infected." });

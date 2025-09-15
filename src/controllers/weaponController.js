@@ -5,7 +5,7 @@ const getWeapons = async (req, res) => {
     try {
         const { name } = req.query;
         const weapons = await weaponModel.getWeapons(name);
-        res.status(200).json({ message: "Weapons retrieved successfully.", weapons });
+        res.status(200).json(weapons);
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: "Error retrieving weapons." });
@@ -19,7 +19,7 @@ const getWeaponById = async (req, res) => {
         if (!weapon) {
             return res.status(404).json({ message: "Weapon not found." });
         }
-        res.status(200).json({ message: "Weapon retrieved successfully.", weapon });
+        res.status(200).json({ weapon });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Error retrieving weapon." });
@@ -44,7 +44,6 @@ const createWeapon = async (req, res) => {
         res.status(500).json({ message: "Error creating weapon." });
     }
 };
-
 
 // Rota para atualizar os dados de uma arma
 const updateWeapon = async (req, res) => {

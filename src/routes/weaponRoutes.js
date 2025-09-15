@@ -5,13 +5,13 @@ const weaponController = require('../controllers/weaponController');
 const upload = multer({ dest: "uploads/" });
 
 // Rota para buscar armas com filtros opcionais
-router.get('/woapons', weaponController.getWeapons);
+router.get('/weapons', weaponController.getWeapons);
 
 // Rota para buscar uma arma pelo ID
-router.get('/woapon/:id', weaponController.getWeaponById);
+router.get('/weapon/:id', weaponController.getWeaponById);
 
 // Rota para criar uma nova arma (com upload de foto)
-router.post("/woapons", (req, res, next) => {
+router.post("/weapons", (req, res, next) => {
     upload.single("photo")(req, res, (err) => {
         if (err) {
             return res.status(400).json({ message: "Erro no upload do arquivo" });
@@ -21,9 +21,9 @@ router.post("/woapons", (req, res, next) => {
 }, weaponController.createWeapon);
 
 // Rota para atualizar os dados de uma arma
-router.put('/woapon/:id', weaponController.updateWeapon);
+router.put('/weapons/:id', weaponController.updateWeapon);
 
 // Rota para deletar uma arma
-router.delete('/woapon/:id', weaponController.deleteWeapon);
+router.delete('/weapons/:id', weaponController.deleteWeapon);
 
 module.exports = router;
