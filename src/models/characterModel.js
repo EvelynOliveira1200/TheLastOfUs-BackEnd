@@ -2,11 +2,13 @@ const pool = require("../config/database");
 
 // Função para buscar personagens com filtros opcionais
 const getCharacters = async (name) => {
-    let query = "SELECT characters.* FROM characters";
+    let query = `SELECT characters.*, weapons.name AS weapon_name
+                FROM characters
+                LEFT JOIN weapons ON characters.favorite_weapon = weapons.id`;
     let params = [];
-    let conditions = []; // Define a variável conditions como um array vazio
+    let conditions = [];
 
-    // Adiciona condições de busca se o nome  forem fornecidos
+    // Adiciona condições de busca se o nome for fornecido
     if (name) {
         conditions.push("(characters.name ILIKE $1)");
         params.push(`%${name}%`);

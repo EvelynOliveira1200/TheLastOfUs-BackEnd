@@ -5,7 +5,7 @@ const getCharacters = async (req, res) => {
     try {
         const { name } = req.query;
         const characters = await characterModel.getCharacters(name);
-        res.status(200).json({ message: "Characters retrieved successfully.", characters });
+        res.status(200).json(characters);
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: "Error retrieving characters." });
