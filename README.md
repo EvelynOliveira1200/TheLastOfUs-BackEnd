@@ -314,7 +314,7 @@ Consulte o arquivo `LICENSE` para mais detalhes.
 ## 📬 Contato
 
 * **GitHub:** [EvelynOliveira1200](https://github.com/EvelynOliveira1200)
-* **LinkedIn:** *(adicione aqui o link do seu perfil)*
+* **Linkedin:** [Evelyn Oliveira](https://www.linkedin.com/in/evelyn-gon%C3%A7alves-de-oliveira-067a4a275/)
 * **E-mail:** [evelyn.g.oliveira7@aluno.senai.br](mailto:evelyn.g.oliveira7@aluno.senai.br)
 
 ---
